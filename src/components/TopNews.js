@@ -94,20 +94,22 @@ export default class TopNews extends React.Component {
 
         return (
             <div>
-                <GetDate />
-                <Header
-                    subtitle={subtitle}
-                />
-                {/* {
+                <div className="head">
+                    <GetDate />
+                    <Header
+                        subtitle={subtitle}
+                    />
+                    {/* {
                     this.state.history.map((el) => {
                         <p>{el}</p>
                     })
                 } */}
-                <SearchBox
-                    handleInputChange={this.handleInputChange}
-                    name="seacrh"
-                    handleSumit={this.handleSumit}
-                />
+                    <SearchBox
+                        handleInputChange={this.handleInputChange}
+                        name="seacrh"
+                        handleSumit={this.handleSumit}
+                    />
+                </div>
                 <News
                     news={this.state.data}
                     dataFetch={this.state.fetching}

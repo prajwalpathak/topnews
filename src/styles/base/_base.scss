@@ -5,7 +5,9 @@ html {
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
-    background: white;
+    background: $light-grey;
+    color: white;
+    text-align: center;
 }
 
 button {
@@ -14,4 +16,19 @@ button {
 
 button:disabled{
     cursor: default;
+}
+
+.head {
+    background: $green;
+    border: 10rem;
+    padding: 2.5rem;
+    list-style: none;
+}
+
+li {
+    border: 10rem;
+    margin: 2rem;
+    margin-right: 4rem;
+    padding: 2.5rem;
+    list-style: none;
 }
