@@ -3,6 +3,7 @@ import Header from './Header';
 import SearchBox from './SearchBox'
 import News from './News';
 import GetDate from './GetDate';
+import Page from './Page';
 
 export default class TopNews extends React.Component {
 
@@ -10,7 +11,20 @@ export default class TopNews extends React.Component {
         data: [],
         query: 'world',
         fetching: true,
-        error: false    }
+        error: false,
+        currentPage: 1,
+        perPage: 5
+    }
+
+    onClickPage = (e) => {
+        e.preventDefault();
+        const idValue = e.target.id;
+        this.setState(() => {
+            return {
+                currentPage: Number(idValue)
+            }
+        });
+    }
 
     componentDidMount() {
         this.getData();
@@ -65,11 +79,11 @@ export default class TopNews extends React.Component {
     handleSumit = (e) => {
         e.preventDefault();
         this.getData(this.state.query);
-        this.setState((prevState) => {
-            return {
-                history: prevState.history.concat(this.state.query)
-            }
-        });
+        // this.setState((prevState) => {
+        //     return {
+        //         history: prevState.history.concat(this.state.query)
+        //     }
+        // });
         if (this.state.query) {
             e.target.elements.search.value = '';
         }
@@ -81,14 +95,30 @@ export default class TopNews extends React.Component {
         return (
             <div>
                 <GetDate />
-                <Header subtitle={subtitle} />
+                <Header
+                    subtitle={subtitle}
+                />
                 {/* {
                     this.state.history.map((el) => {
                         <p>{el}</p>
                     })
                 } */}
-                <SearchBox handleInputChange={this.handleInputChange} name="seacrh" handleSumit={this.handleSumit} />
-                <News news={this.state.data} dataFetch={this.state.fetching}/>
+                <SearchBox
+                    handleInputChange={this.handleInputChange}
+                    name="seacrh"
+                    handleSumit={this.handleSumit}
+                />
+                <News
+                    news={this.state.data}
+                    dataFetch={this.state.fetching}
+                    currentPage={this.state.currentPage}
+                    perPage={this.state.perPage}
+                />
+                <Page
+                    onClick={this.onClickPage}
+                    news={this.state.data}
+                    perPage={this.state.perPage}
+                />
             </div>
         );
     }
