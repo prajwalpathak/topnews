@@ -4,6 +4,7 @@ import SearchBox from './SearchBox'
 import News from './News';
 import GetDate from './GetDate';
 import Page from './Page';
+import Loader from './Loader'
 
 export default class TopNews extends React.Component {
 
@@ -13,7 +14,8 @@ export default class TopNews extends React.Component {
         fetching: true,
         error: false,
         currentPage: 1,
-        perPage: 5
+        perPage: 5,
+        isLoading: true
     }
 
     onClickPage = (e) => {
@@ -49,7 +51,8 @@ export default class TopNews extends React.Component {
                         return {
                             error: false,
                             fetching: false,
-                            data: res.results
+                            data: res.results,
+                            isLoading: false
                         }
                     });
                 }
@@ -115,6 +118,7 @@ export default class TopNews extends React.Component {
                     dataFetch={this.state.fetching}
                     currentPage={this.state.currentPage}
                     perPage={this.state.perPage}
+                    isLoading = {this.state.isLoading}
                 />
                 <Page
                     onClick={this.onClickPage}
