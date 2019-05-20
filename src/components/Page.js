@@ -10,13 +10,14 @@ class Page extends React.Component {
         }
         return (
             <div>
-                <ul>
+                <ul className="button-parent">
                     {pageNumbers.map((number) => {
                         return (
                             <button
                                 key={number}
                                 id={number}
                                 onClick={this.props.onClick}
+                                className="button"
                             >
                                 {number}
                             </button>

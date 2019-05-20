@@ -1,0 +1,15 @@
+.button {
+    background: none;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin: 1rem;
+    &:hover {
+        background: #2f3640;
+        color: white;
+    }
+}
+
+.button-parent {
+    text-align: center;
+}

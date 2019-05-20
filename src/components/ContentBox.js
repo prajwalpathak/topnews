@@ -3,7 +3,7 @@ import React from 'react';
 const ContentBox = (props) => {
 
     return (
-        <div>
+        <div className="news">
             {<li>{props.news.title}: {props.news.abstract}</li>}
         </div>
     );
