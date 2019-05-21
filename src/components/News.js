@@ -13,7 +13,7 @@ const News = (props) => {
 
     return (
         <div>
-            {props.isLoading ? <Loader /> :
+            {props.isLoading ? <Loader className="loader"/> :
                 <ul>
                     {current.map((el, index) => (
                         <ContentBox

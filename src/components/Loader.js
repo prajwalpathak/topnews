@@ -6,14 +6,12 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className="loader">
-                <Loader
-                    type="Triangle"
-                    color="#2f3640"
-                    height="30"
-                    width="30"
-                />
-            </div>
+            <Loader
+                type="Triangle"
+                color="#2f3640"
+                height="70"
+                width="70"
+            />
         );
     } Ï
 }

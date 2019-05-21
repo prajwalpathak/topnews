@@ -17,7 +17,7 @@ class Page extends React.Component {
                                 key={number}
                                 id={number}
                                 onClick={this.props.onClick}
-                                className="button"
+                                className="button button-active"
                             >
                                 {number}
                             </button>
