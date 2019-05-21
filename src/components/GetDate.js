@@ -8,7 +8,7 @@ const GetDate = () => {
 
     return (
         <div>
-            <h2>{`${day}-${month}-${year}`}</h2>
+            <h2 className="date">{`${day}-${month}-${year}`}</h2>
         </div>
     );
 }

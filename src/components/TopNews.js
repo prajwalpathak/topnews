@@ -75,6 +75,7 @@ export default class TopNews extends React.Component {
                 query,
                 fetching: true,
                 error: false,
+                isLoading: true
             }
         });
     }
@@ -124,6 +125,7 @@ export default class TopNews extends React.Component {
                     onClick={this.onClickPage}
                     news={this.state.data}
                     perPage={this.state.perPage}
+                    isLoading={this.state.isLoading}
                 />
             </div>
         );

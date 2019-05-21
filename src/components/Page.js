@@ -10,7 +10,7 @@ class Page extends React.Component {
         }
         return (
             <div>
-                <ul className="button-parent">
+                {this.props.isLoading ? <h1></h1> : <ul className="button-parent">
                     {pageNumbers.map((number) => {
                         return (
                             <button
@@ -24,7 +24,7 @@ class Page extends React.Component {
                         );
                     })
                     }
-                </ul>
+                </ul>}
             </div>
         );
     }

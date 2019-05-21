@@ -12,13 +12,14 @@ const News = (props) => {
     const current = data.slice(indexOfFirst, indexOfLast);
 
     return (
-        <div>
-            {props.isLoading ? <Loader className="loader"/> :
+        <div className="news-box">
+            {props.isLoading ? <Loader /> :
                 <ul>
                     {current.map((el, index) => (
                         <ContentBox
                             key={index}
-                            news={el}>
+                            news={el}
+                            >
                         </ContentBox>
                     ))}
                 </ul>}
