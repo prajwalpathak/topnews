@@ -126,6 +126,7 @@ export default class TopNews extends React.Component {
                     news={this.state.data}
                     perPage={this.state.perPage}
                     isLoading={this.state.isLoading}
+                    currentPage={this.state.currentPage}
                 />
             </div>
         );
