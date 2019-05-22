@@ -1,4 +1,9 @@
 .news-box {
   position: absolute;
   top: 15%;
+  .loader-class {
+    position: fixed;
+    margin-left: 45%;
+    margin-right: 50%;
+  }
 }

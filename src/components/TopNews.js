@@ -4,7 +4,6 @@ import SearchBox from './SearchBox'
 import News from './News';
 import GetDate from './GetDate';
 import Page from './Page';
-import Loader from './Loader'
 
 export default class TopNews extends React.Component {
 
